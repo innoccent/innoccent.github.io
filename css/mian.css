@@ -1,0 +1,580 @@
+/*
+* @Author: lenovo
+* @Date:   2017-07-20 14:42:50
+* @Last Modified by:   innoccent
+* @Last Modified time: 2017-10-03 23:08:53
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+.banner{
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 200;
+	box-sizing: border-box;
+	display: none;
+}
+.banner li{
+	height: 58px;
+	float: left;
+	text-align: center;
+	line-height: 60px;
+	margin-left: 30px;
+	box-sizing: border-box;
+	transition: border-bottom .5s ease;
+}
+.banner li a{
+	color: #fff;
+}
+.border{
+	border-bottom: 2px solid #fff;
+}
+.banner li:hover{
+	border-bottom: 2px solid #fff;
+}
+.banner li:hover a{
+	opacity: 0.8;
+}
+.banner-l{
+	width: 40%;
+	height: 100%;
+	float: right;
+}
+.home{
+	width:100px;
+	height: 35px;
+	padding: 5px 10px;
+	background-color: #000; 
+	margin: 0 auto;
+	table-layout: fixed;
+	top:0;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	z-index: 100;
+	position: relative;
+}
+.home a{
+	color: #fff;
+}
+.down{
+	width: 300px;
+	margin: 0 auto;
+	background-color: #000;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	left: 50%;
+	top: 120%;
+	margin-left: -150px;
+	padding: 20px;
+	display: none;
+}
+.down li{
+	padding: 5px;
+	border-bottom: 1px solid #fff;
+}
+.bgm{
+	position: relative;
+	min-height: 974px;
+	z-index: 100;
+}
+.box{
+	width: 100%;
+	background-image: url('../img/1.jpg');
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+.box .row{
+	padding: 0 30px;
+}
+.page{
+	margin-top: 50px;
+	text-align: center;
+	font-size: 18px;
+	width: 100%;
+}
+.page a{
+	color: #FFF;
+}
+.h1{
+	width: 100%;
+	font-size:54px;
+	text-align: center;
+	margin-top: 23%;
+	font-family: "微软雅黑";
+	letter-spacing: 18px;
+	color: #fff;
+}
+.h3,.h4{
+	width: 100%;
+	font-size: 26px;
+	margin-top: 5%;
+	text-align: center;
+	color: #00ffff;
+}
+.h4{
+	font-size: 24px;
+}
+.img{
+	margin: 5% auto;
+}
+.img li{
+	height: 64px;
+	width: 64px;
+	border-radius: 10px;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	margin-left: 8px;
+}
+/* .img li:nth-child(1){
+	background-image: url('../img/download.png');
+	background-position: 0 0;
+}
+.img li:nth-child(2){
+	background-image: url('../img/download.png');
+	background-position: -64px 0;
+}
+.img li:nth-child(3){
+	background-image: url('../img/download.png');
+	background-position: -128px 0;
+}
+.img li:nth-child(4){
+	background-image: url('../img/download.png');
+	background-position: -193px 0;
+} */
+.more{
+	width: 100%;
+	height: 64px;
+}
+.more span{
+	display: block;
+	width: 65px;
+	height: 64px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	margin: 5% auto;
+	font-size: 60px;
+	font-weight: 200;
+	color: #fff;
+	line-height: 48px;
+	text-align: center;
+}
+.more span:hover{
+	border: 2px solid #00ffff;
+}
+.more span a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	top: -100%;
+	z-index: 100;
+}
+.form-inline{
+	width: 100%;
+	background-color: #d2dbe1;
+	padding: 100px 0;
+	position: relative;
+	z-index: 100;
+}
+.imgbox{
+	width: 43.1%;
+}
+.imgbox img{
+	display: block;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.word{
+	width: 56.9%;
+	height: 100%;
+	background-color: rgba(16,59,91,0.9);
+	padding: 40px;
+	color: #fff;
+	float: right;
+}
+.education{
+	width: 100%;
+	padding: 0 100px;
+	background-color: #fff;
+	position: relative;
+	overflow: hidden;
+	z-index: 100;
+}
+.edu-main{
+	border-bottom: 1px solid #333;
+}
+.text-center{
+	margin: 0 auto;
+	padding: 80px 0 0 0;
+	margin-bottom: 5%;
+
+}
+.text-center span{
+	margin: 5px auto;
+	display: block;
+	width: 100px;
+	border: 1px solid #000;
+}
+.exp{
+	padding-bottom: 50px;
+}
+.jiao{
+	text-align: center;
+	font-size: 22px;
+	font-weight: 500;
+}
+.line{
+	width: 120px;
+	height: 2px;
+	background-color: #11abb0;
+	margin: 0 auto;
+}
+.det ul li{
+	text-align: left;
+	background-image: url('../img/2.png');
+	background-repeat: no-repeat;
+	background-position: top left ;
+
+}
+.det ul li{
+	padding-left: 30px;
+	padding-top: 10px;
+}
+.time span{
+	background-color: #ed5565;
+	color: #fff;
+}
+.work{
+	width: 100%;
+	background-color: #fff;
+	position: relative;
+	overflow: hidden;
+	padding: 0 100px;
+	padding-top:5%;
+	z-index: 100;
+}
+.work-main,.konw-main{
+	border-bottom: 1px solid #000;
+}
+.knowledge{
+	width: 100%;
+	background-color: #fff;
+	position: relative;
+	overflow: hidden;
+	padding: 0 5% ;
+	padding-top:5%;
+	z-index: 100;
+}
+/* .konw-main .container{
+	position: relative;
+	width: 100% !important;
+	z-index: 100;
+} */
+.workpar li{
+	width: 100%;
+	text-align: left;
+}
+.workpar li span{
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 500;
+}
+.parbar{
+	width: 95%;
+	height: 10px;
+	border-radius: 8px;
+	background-color: #bdc3c7;
+}
+.chibar{
+	width: 90%;
+	height: 100%;
+	border-radius: 8px;
+	background-color: #d35400;
+}
+.chibar1{
+	width: 86%;
+	background-color: #3498db;
+}
+.chibar2{
+	width: 80%;
+	background-color: #34495E;
+}
+.chibar3{
+	width: 80%;
+	background-color: #9b59b6;
+}
+.chibar4{
+	width: 83%;
+	background-color: green;
+}
+.do{
+	width: 100%;
+	/* background-color: #fff; */
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+}
+.bgmimage{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+}
+.zuoping{
+	overflow: hidden;
+	position: relative;
+	z-index: 100;
+	padding: 0 100px;
+}
+.zuo-main{
+	width: 100%;
+	text-align: center;
+	padding: 3% 0 ;
+	overflow: hidden;
+}
+.zuo-main p{
+	font-size: 36px;
+	color: #fff;
+}
+.zuo-main ul li{
+	float: left;
+	margin-bottom: 2%;
+}
+.zuo-main ul li div{
+	margin: 0 auto;
+	width: 250px;
+	height: 250px;
+}
+.call{
+	width: 100%;
+	padding: 40px 0;
+	position: relative;
+	z-index: 100;
+	background-color: #000;
+	text-align: center;
+}
+.call p{
+	width: 100%;
+	color: white;
+}
+.loop{
+	width: 100%;
+	background: #fff;
+	position: relative;
+	z-index: 100;
+	text-align: center;
+	padding: 3% 0;
+}
+.play{
+	width: 52%;
+	padding: 5px;
+	border: 1px solid #ccc;
+	max-height: 1500px;
+	margin: 0 auto;
+	overflow: hidden;
+	/* position: relative; */
+}
+.bo{
+	width: 100%;
+	height: 100%;
+	height: 592px;
+	overflow: hidden;
+	position: relative;
+}
+.fang{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+}
+.fang>li{
+	width: 100%;
+	height: 100%;
+	background-size: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.circlew{
+	width: 60px;
+	height: 15px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	bottom: 10px;
+}
+.circlew>li{
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	float: left;
+	margin-left: 15px;
+	background-color: #fff;
+	z-index: 200;
+	cursor: pointer;
+}
+li.active{
+	background-color: #333;
+}
+.left,.right{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	margin-top: -15px;
+	font-size: 20px;
+	text-align: center;
+	line-height: 30px;
+	font-family: "宋体";
+	color: #fff;
+	font-weight: bold;
+	background-color: rgba(0,0,0,0.6);
+	cursor: pointer;
+}
+.left{
+	left: 0;
+}
+.right{
+	right: 0;
+}
+.foot{
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	z-index: 100;
+	text-align: center;
+	background-color: #103b5b;
+	padding: 5% 0;
+}
+.foot h1{
+	color: #fff;
+	font-size: 42px;
+	margin-bottom: 2%;
+}
+.foot p{
+	font-size: 18px;
+	color: #fff;
+}
+.foot p span{
+	color: #11abb0;
+}
+.foot h6{
+	color: #fff;
+	font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 992px){
+	.h1{
+		margin-top: 15%;
+	}
+	
+}
+@media screen and (max-width: 992px){
+	.h1{
+		margin-top: 30%;
+	}
+	.auto{
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+	.konwledge,.work,.education{
+		padding: 0 15px;
+	}
+	.yue{
+		margin-bottom: 30px;
+	}
+	.bgmimage{
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+	.zuoping{
+		padding: 0 20px;
+	}
+	.banner{
+		display: none;
+	}
+	
+}
+@media screen and (max-width: 768px){
+	.h1{
+		margin-top: 60%;
+		font-size: 32px;
+		letter-spacing: 0;
+	}
+	.home{
+		margin-top: 20%;
+	}
+	.bo{
+		max-height: 300px;
+	}
+
+}
+@media screen and (min-width:768px){
+	.bgmimage{
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+	.zuoping{
+		padding: 0 10px;
+	}
+}
+@media screen and (max-width: 564px){
+	.h1{
+		margin-top: 80%;
+		letter-spacing: 0;
+		font-size: 32px;
+	}
+	.bo{
+		max-height: 150px;
+	}
+}

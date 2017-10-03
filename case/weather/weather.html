@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../jquery.min.js"></script>
+    <title>天气改变命运</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+            text-decoration: none;
+            box-sizing: border-box;
+
+        }
+        img{
+            width:100%;
+            height:100%;
+        }
+        html,body{
+            overflow: hidden;
+        }
+        video{
+            position: absolute;
+            left:50%;
+            margin-left: -1020px;
+            z-index:1;
+        }
+        div.pictitle{
+            position: relative;
+            z-index:11;
+            width:533px;
+            height:125px;
+            margin:30px auto;
+        }
+        div.pictitle>img{
+            width:100%;
+            height:100%;
+        }
+        div.choose{
+            overflow: hidden;
+            position: relative;
+            width:820px;
+            margin:0 auto;
+            z-index:11;
+        }
+        div.choose>select,div.choose>button#tq{
+            padding:10px 10px;
+            /*margin:0 3rem 0 0;*/
+            color: #fff;
+            text-align: center;
+            width:200px;
+            height:60px;
+            font-size: 15px;
+            background: rgba(0,0,0,.3);
+            border-radius: 20px;
+        }
+        div.choose>select>option{
+            text-align: center;
+        }
+        div.choose>button#tq{
+            border:none;
+            outline:none;
+        }
+        section{
+            width:760px;
+            height:auto;
+            overflow: hidden;
+            margin:20px auto;
+            position: relative;
+            z-index:11;
+        }
+        section>div.first{
+            width:755px;
+            height:auto;
+            float: left;
+        }
+        div.wrcd{
+            height:42px;
+            margin:0 20px 0 0;
+            border-radius: 42px;
+            background: rgba(0,0,0,.3);
+            width:163px;
+            height:42px;
+        }
+        div.wrcd>span{
+            display: block;
+            float: left;
+            margin:6px 5px;
+            width:30px;
+            height:30px;
+            border-radius: 30px;
+            background: #f39800;
+        }
+        div.wrcd>em{
+            float: left;
+            display: block;
+            height:30px;
+            margin:6px auto 5px;
+            color: #fff;
+            line-height:30px;
+        }
+        div.weatherpic{
+            width:100%;
+            margin:25px 0 0;
+            font-size: 16px;
+        }
+        div.weatherpic>em{
+            position: relative;
+            float: left;
+            color: #fff;
+            font-family: Arial;
+            font-size: 170px;
+            line-height:1;
+        }
+        div.weatherpic>span{
+            float: left;
+            padding:58px 0 0;
+            font-size: 16px;
+        }
+        div.weatherpic>b{
+            float: left;
+            padding:112px 0 0;
+            color: #fff;
+            font-size:30px;
+        }
+        div.weatherpic>strong{
+            float: left;
+            padding:125px 0 0 15px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        ul{
+            float: left;
+            background: rgba(0,0,0,.3);
+            width:715px;
+            height:58px;
+            padding:0 20px;
+            font-size: 0;
+            line-height:58px;
+            border-bottom: 1px solid rgba(255,255,255,.2);
+        }
+        #data{
+            width:112px;
+            float: left;
+            color: rgba(255,255,255,.7);
+            font-size: 16px;
+            line-height:58px;
+            text-align: left;
+        }
+        #data>a{
+            width:24px;
+            padding:0 4px;
+            line-height:24px;
+            color: rgba(255,255,255,.7);
+            border-bottom: 1px solid rgba(255,255,255,.7);
+            font-size: 16px;
+
+        }
+        #status,#wendu,#fengli,#wuran{
+            width:164px;
+            float: left;
+            color: #fff;
+            font-size: 16px;
+            line-height:58px;
+            text-align: left;
+        }
+        #status>span{
+            float: left;
+            height:58px;
+            padding:0 10px 0 0;
+            line-height:58px;
+        }
+        #status>span>img{
+            display: inline-block;
+            vertical-align: middle;
+            width:28px;
+            height:28px;
+        }
+        #wendu{
+            width:142px;
+        }
+        #fengli{
+            width:102px;
+        }
+        #fengli>b{
+            float: right;
+            font-weight: 400;
+        }
+        #wuran{
+            float: right;
+            width:auto;
+        }
+        #wuran>strong{
+            display: inline-block;
+            vertical-align: middle;
+            height:26px;
+            padding:0 10px;
+            line-height: 26px;
+            font-weight: 400;
+            border-radius: 13px;
+            background: #f39800;
+        }
+    </style>
+</head>
+<body>
+    <video src="video621.mp4" width="2040" height="auto" loop="loop" autoplay="autoplay"></video>
+    <div class="pictitle">
+        <img src="index_15.png" alt="">
+    </div>
+    <div class="choose">
+        <select name="province" id="province">
+            <option value="0" selected>省份</option>
+        </select>
+        <select name="city" id="city">
+            <option value="0" selected>市</option>
+        </select>
+        <select name="town" id="town">
+            <option value="0" selected>县区</option>
+        </select>
+        <button id="tq">获取天气信息</button>
+    </div>
+    <section>
+        <div class="first">
+            <div class="wrcd">
+                <span></span>
+                <em>111 轻度污染</em>
+            </div>
+            <div class="weatherpic">
+                <em>28°</em>
+                <span>
+                    <img src="weathercn/0.png" alt="">
+                </span>
+                <b>多云</b>
+                <strong>今天22:26更新</strong>
+            </div>
+        </div>
+        <ul>
+            <li id="data">
+                <a href="">今天</a></li>
+            <li id="status">
+                <span><img src="weathercn/0.png" alt=""></span>
+                <span class="qin">晴</span>
+            </li>
+            <li id="wendu"><span>20°</span>/<span>38°</span></li>
+            <li id="fengli">
+                <em>北风</em>
+                <b>2级</b>
+            </li>
+            <li id="wuran"><strong>11 轻度污染</strong></li>
+        </ul>
+    </section>
+</body>
+</html>
+<script>
+    //获取所有的省份
+    $('#province').one('click',function () {
+        $.ajax({
+            dataType:'jsonp',
+            url:'http://api.jisuapi.com/area/province?appkey=b2c2696b4b1d1e98'
+        }).done(function (obj) {
+            $.each(obj.result,function (index,value) {
+                $('<option>').attr('value',value.id).html(value.name).appendTo($('#province'))
+            })
+        })
+    }).change(function () {
+        if($(this).val()==0){
+            return;
+        }
+        $('#city,#town').children('option[value=0]').nextAll().remove();
+        $.ajax({
+            dataType:'jsonp',
+            url:'http://api.jisuapi.com/area/city?parentid='+$(this).val()+'&appkey=b2c2696b4b1d1e98'
+        }).done(function (obj) {
+            $.each(obj.result,function (index,value) {
+                $('<option>').attr('value',value.id).html(value.name).appendTo($('#city'));
+            })
+        })
+    });
+
+    //点击市区出现对应的县区
+    $('#city').change(function () {
+        $.ajax({
+            dataType:'jsonp',
+            url:'http://api.jisuapi.com/area/town?parentid='+$(this).val()+'&appkey=b2c2696b4b1d1e98'
+        }).done(function (obj) {
+            $.each(obj.result,function (index,value) {
+                $('<option>').attr('value',value.id).html(value.name).appendTo($('#town'))
+            })
+        });
+    });
+
+
+    //点击获取当前城市天气状况
+    $('#tq').click(function () {
+        $.ajax({
+            dataType:'jsonp',
+            url:'http://api.jisuapi.com/weather/query?appkey=b2c2696b4b1d1e98&city='+$('#city').children('option:selected').text()
+        }).done(function (obj) {
+            console.log(obj.result)
+            $('#wuran').text(obj.result.pm10);
+            $('.weatherpic>b').text(obj.result.weather);
+            $('.weatherpic>strong').text(obj.result.updatetime+'更新');
+            $('.weatherpic').find('img').attr('src','weathercn/'+obj.result.img+'.png').end().children('em').text(obj.result.temp+'°');
+            $('#status').find('img').attr('src','weathercn/'+obj.result.img+'.png');
+            $('#status').children('span.qin').text(obj.result.weather);
+            $('#fengli').children('em').text(obj.result.winddirect).end().children('b').text(obj.result.windpower);
+            $('#wendu>span:first').text(obj.result.templow+'°');
+            $('#wendu>span:last').text(obj.result.temphigh+'°');
+
+        })
+    })
+
+
+</script>
